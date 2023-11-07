@@ -1,0 +1,10 @@
+span{
+    color: red;
+}
+.centered-div {
+    background-color: rgb(226, 226, 255);
+    display: flex;
+    justify-content: center; /* Horizontal centering */
+    align-items: center; /* Vertical centering */
+    height: 70vh; /* Center within the viewport height */
+  }

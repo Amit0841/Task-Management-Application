@@ -1,0 +1,21 @@
+nav{
+    background-color: aquamarine;
+    padding-top:15px ;padding-bottom: 15px ;
+}
+#b1{
+background-color: aquamarine; border: none;
+margin-left: 70px;
+padding-left: 10px;padding-right: 10px;padding-top: 11px;padding-bottom: 11px;border-radius: 9px;
+}
+#b2:hover{
+    background-color: rgb(190, 253, 232);
+}
+#b1:hover{
+    background-color: rgb(190, 253, 232);
+}
+#b2{
+    background-color: aquamarine; border: none;
+margin-left: 30%;
+padding-left: 10px;padding-right: 10px;padding-top: 11px;padding-bottom: 11px;border-radius: 9px;  
+}
+
