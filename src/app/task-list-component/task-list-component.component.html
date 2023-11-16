@@ -1,12 +1,12 @@
 
 <table class="custom-table">
-    <tr> <th>Task Name</th> <th>Status</th><th>Details</th>
+    <tr> <th>Task Name</th> <th>Status</th> <th>Details</th> <th>Delete</th> 
     </tr>
     <tr  *ngFor="let item of arr"> <td >{{item.title}} </td> <td>{{item.completed}}</td>
 
         <td [routerLink]="['taskDetail', item.id]">
             <button>Details</button>
-                </td>
+                </td>  <td> <button id="delete" (click)="delete(item.idd)">Delete</button></td>
     </tr>
 </table>
 

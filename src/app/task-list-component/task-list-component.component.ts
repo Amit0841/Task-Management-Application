@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TaskServiceService } from '../task-service.service';
 import { Task } from '../TaskModle';
 import { Router } from '@angular/router';
@@ -9,22 +9,30 @@ import { Router } from '@angular/router';
   styleUrls: ['./task-list-component.component.css']
 })
 
-export class TaskListComponentComponent {
+export class TaskListComponentComponent implements OnInit{
+  todo:any;
+
+    ngOnInit(): void {
+      this.taskService.firestoreCollection.valueChanges({idField:'idd'}).subscribe(item=>{
+        console.log(item);
+  this.arr=item;
+  this.taskService.setArr(this.arr);
+      })
+    }
+
 constructor(private taskService:TaskServiceService,private router: Router){this.ch()}
-arr:Task[]=[];
+arr:any[]=[];
  id=0;
  title='';
  description='';
  status='';
 
+ delete(idd:string){
+this.taskService.deleteItem(idd);
+ }
+
 ch(){
   this.arr=this.taskService.getTaskArr();
-  console.log(this.arr);
 }
-// navigateToPage(id:number){
-// console.log(id);
 
-// this.router.navigate(['taskDetail',id]);
-
-// }
 }

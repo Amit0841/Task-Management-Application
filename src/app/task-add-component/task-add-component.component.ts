@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { TaskServiceService } from '../task-service.service';
 import { Task } from '../TaskModle';
 import {FormGroup,FormControl,Validators} from '@angular/forms'
@@ -8,11 +8,16 @@ import {FormGroup,FormControl,Validators} from '@angular/forms'
   templateUrl: './task-add-component.component.html',
   styleUrls: ['./task-add-component.component.css']
 })
-export class TaskAddComponentComponent {
+export class TaskAddComponentComponent{
+//   todo:any; implements OnInit
+ constructor(private taskService:TaskServiceService){}
+//   ngOnInit(): void {
+//     this.taskService.firestoreCollection.valueChanges().subscribe(item=>{
+// this.todo=item;
+//     })
+//   }
 
-constructor(private taskService:TaskServiceService){}
-
-arr:Task[]=[];
+arr:any[]=[];
 
 form=new FormGroup({
   title:new FormControl('',Validators.required),

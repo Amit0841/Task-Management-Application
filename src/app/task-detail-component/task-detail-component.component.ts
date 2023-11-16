@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
 import { TaskServiceService } from '../task-service.service';
 import {Task} from '../TaskModle';
@@ -9,18 +9,21 @@ import {Task} from '../TaskModle';
   styleUrls: ['./task-detail-component.component.css']
 })
 
-export class TaskDetailComponentComponent {
+export class TaskDetailComponentComponent  {
    taskId=0;
    title='';
    description='';
    status='';
    b='';
-arr:Task[]=[];
+   idd='';
+arr:any[]=[];
 
   constructor(private taskServiceService:TaskServiceService, private route: ActivatedRoute) {
     this.route.params.subscribe(params => {
        this.taskId = params['id']; 
     });
+
+   
 
     this.arr=taskServiceService.getTaskArr();
 for(let i=0;i<this.arr.length;i++){
@@ -28,6 +31,7 @@ for(let i=0;i<this.arr.length;i++){
     this.title= this.arr[i].title;
     this.description= this.arr[i].description;
     this.status= this.arr[i].completed;
+    this.idd=this.arr[i].idd;
     if(this.status=="complete"){
 this.b="pending";
     }else{
@@ -36,7 +40,11 @@ this.b="pending";
   }
 }
   }
-  complete(id:number) {
+
+
+  complete(id:number,idd:string) {
+
+
     for(let i=0;i<this.arr.length;i++){
       if(id==this.arr[i].id){
         if(this.arr[i].completed=="complete"){
@@ -47,10 +55,10 @@ this.b="pending";
           this.arr[i].completed="complete";console.log(this.arr[i]);
         this.status="complete";this.b='pending';
         }
-        
         this.taskServiceService.setArr(this.arr);
+
       }
     }
-
+    this.taskServiceService.updateStatus(idd,this.status);
   }
 }

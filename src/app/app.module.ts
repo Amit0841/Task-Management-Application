@@ -7,6 +7,9 @@ import { TaskListComponentComponent } from './task-list-component/task-list-comp
 import { TaskAddComponentComponent } from './task-add-component/task-add-component.component';
 import { TaskDetailComponentComponent } from './task-detail-component/task-detail-component.component';
 import { FormsModule,ReactiveFormsModule } from '@angular/forms';
+import { AngularFireModule } from '@angular/fire/compat';
+import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
+import { environment } from 'src/environments/environment';
 
 @NgModule({
   declarations: [
@@ -16,8 +19,8 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
     TaskDetailComponentComponent
   ],
   imports: [
-    BrowserModule,FormsModule,ReactiveFormsModule ,
-    AppRoutingModule
+    BrowserModule,FormsModule,ReactiveFormsModule ,AngularFireModule.initializeApp(environment.firebaseConfig),
+    AppRoutingModule,AngularFirestoreModule
   ],
   providers: [],
   bootstrap: [AppComponent]
