@@ -52,7 +52,7 @@ this.b="pending";
           this.status="pending";
           this.b='complete';
         }else{
-          this.arr[i].completed="complete";console.log(this.arr[i]);
+          this.arr[i].completed="complete";
         this.status="complete";this.b='pending';
         }
         this.taskServiceService.setArr(this.arr);

@@ -9,20 +9,13 @@ import {FormGroup,FormControl,Validators} from '@angular/forms'
   styleUrls: ['./task-add-component.component.css']
 })
 export class TaskAddComponentComponent{
-//   todo:any; implements OnInit
  constructor(private taskService:TaskServiceService){}
-//   ngOnInit(): void {
-//     this.taskService.firestoreCollection.valueChanges().subscribe(item=>{
-// this.todo=item;
-//     })
-//   }
-
 arr:any[]=[];
 
 form=new FormGroup({
   title:new FormControl('',Validators.required),
   description:new FormControl('',Validators.required),
-  completed:new FormControl('Pending',Validators.required)
+  completed:new FormControl('pending',Validators.required)
 })
 
 i=1;

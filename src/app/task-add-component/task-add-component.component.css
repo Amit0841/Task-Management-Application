@@ -1,10 +1,32 @@
+*{
+    margin: 0;
+    padding:0;
+}
 span{
     color: red;
 }
 .centered-div {
     background-color: rgb(226, 226, 255);
     display: flex;
-    justify-content: center; /* Horizontal centering */
-    align-items: center; /* Vertical centering */
-    height: 70vh; /* Center within the viewport height */
+    justify-content: center; 
+    align-items: center; 
+    height: 70vh;
+  }
+  input{
+    padding: 10px;
+    border-radius: 9px;
+    border: 1px;
+  }
+  select{
+    padding: 10px;
+    border-radius: 9px;
+    border: 1px;
+  }
+  button{
+    padding: 10px;padding-left: 20px;
+    padding-right: 20px;
+    border-radius: 9px;
+    border: 1px; 
+    background-color: rgb(47, 181, 10);
+    color: white;
   }

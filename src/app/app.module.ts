@@ -10,13 +10,17 @@ import { FormsModule,ReactiveFormsModule } from '@angular/forms';
 import { AngularFireModule } from '@angular/fire/compat';
 import { AngularFirestoreModule } from '@angular/fire/compat/firestore';
 import { environment } from 'src/environments/environment';
+import { LoginComponent } from './login/login.component';
+import { SignupComponent } from './signup/signup.component';
 
 @NgModule({
   declarations: [
     AppComponent,
     TaskListComponentComponent,
     TaskAddComponentComponent,
-    TaskDetailComponentComponent
+    TaskDetailComponentComponent,
+    LoginComponent,
+    SignupComponent
   ],
   imports: [
     BrowserModule,FormsModule,ReactiveFormsModule ,AngularFireModule.initializeApp(environment.firebaseConfig),

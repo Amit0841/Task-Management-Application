@@ -3,15 +3,14 @@
    <form [formGroup]="form">
 
     <label>Title</label><br>
-    <input  formControlName="title" type="text" ><br>
+    <input formControlName="title" placeholder="Enter Title" type="text" ><br>
 <span *ngIf="form.get('title')?.invalid && form.get('title')?.touched">Invalid</span><br>
 
     <label>Description</label><br>
-    <input formControlName="description" type="text" ><br>
+    <input formControlName="description" placeholder="Enter Description" type="text" ><br>
     <span *ngIf="form.get('description')?.invalid && form.get('description')?.touched">Invalid</span><br>
 
-    <label>Completed</label><br>
-
+    <label>Status</label><br>
     <select formControlName="completed" >
 <option value="pending">Pending</option>
 <option value="complete">Complete</option>

@@ -1,0 +1,20 @@
+<body>
+  
+  <div id="mainDiv">
+      
+      <div id="formDiv">
+          <h2>Create your Account</h2><br><br>
+          <div>
+            <p >User Name</p>
+            <input [(ngModel)]="userName" placeholder="Enter Your User Name" type="email"><br>
+  <p >Email</p>
+  <input [(ngModel)]="email" placeholder="Enter Your Email" type="email"><br>
+  <p >Password</p>
+  <input placeholder="Enter Your Password" [(ngModel)]="password" type="password"><br><p id="error">{{error}}</p><br>
+  <button (click)="register()" >Register</button></div> <br>
+  <p>Have any Account? <span routerLink="">Login here</span></p><br>
+      </div>
+     
+  </div>
+      
+  </body>

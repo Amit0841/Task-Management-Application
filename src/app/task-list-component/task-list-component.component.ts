@@ -14,7 +14,6 @@ export class TaskListComponentComponent implements OnInit{
 
     ngOnInit(): void {
       this.taskService.firestoreCollection.valueChanges({idField:'idd'}).subscribe(item=>{
-        console.log(item);
   this.arr=item;
   this.taskService.setArr(this.arr);
       })

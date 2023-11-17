@@ -1,11 +1,11 @@
 nav{
     background-color: aquamarine;
-    padding-top:15px ;padding-bottom: 15px ;
+    padding-top:15px ;padding-bottom: 15px ;display: flex; gap: 30%;
 }
 #b1{
 background-color: aquamarine; border: none;
-margin-left: 70px;
-padding-left: 10px;padding-right: 10px;padding-top: 11px;padding-bottom: 11px;border-radius: 9px;
+ margin-left: 70px;
+/*padding-left: 10px;padding-right: 10px;padding-top: 11px;padding-bottom: 11px;border-radius: 9px; */
 }
 #b2:hover{
     background-color: rgb(190, 253, 232);
@@ -15,7 +15,24 @@ padding-left: 10px;padding-right: 10px;padding-top: 11px;padding-bottom: 11px;bo
 }
 #b2{
     background-color: aquamarine; border: none;
-margin-left: 30%;
-padding-left: 10px;padding-right: 10px;padding-top: 11px;padding-bottom: 11px;border-radius: 9px;  
+/* margin-left: 30%;
+padding-left: 10px;padding-right: 10px;padding-top: 11px;padding-bottom: 11px;border-radius: 9px;   */
 }
 
+@media screen and (max-width: 650px) {
+    #b1{
+         margin-left: 30px;
+        }
+        nav{
+           gap: 20%;
+        }
+}
+
+@media screen and (max-width: 400px) {
+    #b1{
+         margin-left: 10px;
+        }
+        nav{
+           gap: 15%;
+        }
+}

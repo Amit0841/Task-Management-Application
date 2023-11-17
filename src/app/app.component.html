@@ -1,5 +1,6 @@
-<nav>
-    <button  id="b1" routerLink="taskAdd">ADD Task</button> <button id="b2" routerLink="">Task List</button>
+<nav class="navbar">
+    <button  id="b1" [disabled]="!isLogin" routerLink="taskAdd">ADD Task</button> <button id="b2" [disabled]="!isLogin"  routerLink="tasklist">Task List</button> 
+    <button id="b2" (click)="logout()" routerLink="">{{l}}</button>
 </nav><br>
 
 <router-outlet></router-outlet>
